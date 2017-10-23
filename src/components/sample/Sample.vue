@@ -1,9 +1,17 @@
 <template>
   <div>
-
+    <p>sample</p>
   </div>
 </template>
 
-<script src="Sample.js"></script>
+<script>
+export default {
+  data () {
+    return {}
+  }
+}
+</script>
 
-<style src="Sample.css"></style>
+<style>
+
+</style>

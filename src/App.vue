@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <sample></sample>
   </div>
 </template>
 
@@ -9,7 +10,9 @@
 
   export default {
     name: 'app',
-    components: {}
+    components: {
+      'sample': Sample
+    }
   }
 </script>
 
