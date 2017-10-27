@@ -6,12 +6,12 @@
 </template>
 
 <script>
-  import Sample from '@/components/sample/Sample.vue'
+  import Sample2 from '@/components/sample2/Sample2.vue'
 
   export default {
     name: 'app',
     components: {
-      'sample': Sample
+      'sample': Sample2
     }
   }
 </script>
