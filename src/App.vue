@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <sample></sample>
+    <index></index>
   </div>
 </template>
 
 <script>
-  import Sample2 from '@/components/sample2/Sample2.vue'
+  import Index from '@/components/Index.vue'
 
   export default {
     name: 'app',
     components: {
-      'sample': Sample2
+      'index': Index
     }
   }
 </script>
