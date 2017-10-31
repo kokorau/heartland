@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>this is front contents</h1>
+    <h1
+      style="color: red; font-size: 5em;"
+    >HEART LAND</h1>
   </div>
 </template>
 

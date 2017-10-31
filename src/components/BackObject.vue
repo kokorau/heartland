@@ -30,7 +30,7 @@
 
       // === box ===
       const geometry = new THREE.BoxGeometry (100, 100, 100);
-      const material = new THREE.MeshNormalMaterial ();
+      const material = new THREE.MeshLambertMaterial ();
       const boxes = new THREE.Group();
       for (let i = 0; i < 1000; i ++ ) {
         const mesh = new THREE.Mesh (geometry, material);

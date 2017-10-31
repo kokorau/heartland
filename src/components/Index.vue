@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <back-object></back-object>
+    <div class="z-2">
+      <front-contents></front-contents>
+    </div>
+    <div class="z-1">
+      <back-object></back-object>
+    </div>
   </div>
 </template>
 
@@ -11,6 +16,7 @@
   export default {
     name: 'index',
     components: {
+      FrontContents,
       BackObject,
       'front-contents': FrontContents,
       'back-object': BackObject
