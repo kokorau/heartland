@@ -20,8 +20,8 @@
 
       // === scene ===
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color( 0xffffff );
-      scene.fog = new THREE.Fog( 0xffffff, 1, 10000 );
+      scene.background = new THREE.Color( 0xaaaaaa );
+      scene.fog = new THREE.Fog( 0xddffdd, 1, 1000 );
 
       // === camera ===
       const camera = new THREE.PerspectiveCamera( 60, width / height, 1, 10000 );
@@ -29,16 +29,16 @@
       scene.add (camera);
 
       // === box ===
-      const geometry = new THREE.BoxGeometry (100, 100, 100);
-      const material = new THREE.MeshLambertMaterial ();
+      const geometry = new THREE.TorusGeometry(100, 8, 16, 100);
+      const material = new THREE.MeshNormalMaterial();
       const boxes = new THREE.Group();
-      for (let i = 0; i < 1000; i ++ ) {
+      for (let i = 0; i < 500; i ++ ) {
         const mesh = new THREE.Mesh (geometry, material);
         mesh.position.x = Math.random() * 2000 - 1000;
         mesh.position.y = Math.random() * 2000 - 1000;
         mesh.position.z = Math.random() * 2000 - 1000;
-        mesh.rotation.x = Math.random() * 2 * Math.PI;
-        mesh.rotation.y = Math.random() * 2 * Math.PI;
+        // mesh.rotation.x = Math.random() * 2 * Math.PI;
+        // mesh.rotation.y = Math.random() * 2 * Math.PI;
         mesh.matrixAutoUpdate = false;
         mesh.updateMatrix();
         boxes.add( mesh );
@@ -50,6 +50,8 @@
       const light = new THREE.DirectionalLight (0x444444);
       light.position.set (1, 1, 1);
       scene.add (light);
+
+      // === glitch ===
 
       return {
         height: height,
@@ -77,7 +79,7 @@
       render() {
         const time = Date.now () * 0.001;
         const rx = Math.sin (time * 0.7) * 0.5,
-          ry = Math.sin (time * 0.3) * 0.5,
+          ry = Math.sin (time * 0.3) * 3,
           rz = Math.sin (time * 0.2) * 0.5;
         // 箱を回転させる
         this.camera.position.x += this.camera.position.x * 0.5;
