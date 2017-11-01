@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <h1 style="color: red; font-size: 5em;"
-    >HEART LAND</h1>
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+    </div>
+
   </div>
 </template>
 

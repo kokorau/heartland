@@ -9,7 +9,6 @@
   import * as THREE from 'three';
 
   export default {
-    name: 'back-object',
     data () {
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -29,8 +28,14 @@
       scene.add (camera);
 
       // === box ===
-      const geometry = new THREE.TorusGeometry(100, 8, 16, 100);
-      const material = new THREE.MeshNormalMaterial();
+      const geometry = new THREE.BoxGeometry(100,100,100);
+//      const geometry = new THREE.TorusGeometry(100, 8, 16, 100); // 形状
+
+      const loader = new THREE.TextureLoader();
+      const texture = loader.load('../assets/dog_img.jpg');
+      const material = new THREE.MeshNormalMaterial({
+        map: texture
+      }); // テクスチャ
       const boxes = new THREE.Group();
       for (let i = 0; i < 500; i ++ ) {
         const mesh = new THREE.Mesh (geometry, material);
@@ -47,7 +52,7 @@
       scene.add (boxes);
 
       // === light ===
-      const light = new THREE.DirectionalLight (0x444444);
+      const light = new THREE.DirectionalLight (0xffff44); // light
       light.position.set (1, 1, 1);
       scene.add (light);
 
@@ -64,6 +69,7 @@
         mouse: {x: 0, y: 0}
       }
     },
+    name: 'back-object',
     mounted () {
       this.$refs.canvas.appendChild (
         this.renderer.domElement
