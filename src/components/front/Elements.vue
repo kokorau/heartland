@@ -243,7 +243,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 </template>
 
 <script>
-
+  module.exports = {
+    name: 'fr-elements'
+  }
 </script>
 
 <style>

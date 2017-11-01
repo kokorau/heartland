@@ -10,7 +10,7 @@
 
 <script>
   module.exports = {
-    name: 'intro'
+    name: 'fr-intro'
   }
 </script>
 

@@ -31,7 +31,7 @@
 
 <script>
   module.exports = {
-    name: 'contact'
+    name: 'fr-contact'
   }
 </script>
 

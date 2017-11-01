@@ -9,6 +9,6 @@
 
 <script>
   module.exports = {
-    name: 'about'
+    name: 'fr-about'
   }
 </script>
