@@ -20,7 +20,7 @@
       // === scene ===
       const scene = new THREE.Scene();
       scene.background = new THREE.Color( 0xaaaaaa );
-      scene.fog = new THREE.Fog( 0xddffdd, 1, 1000 );
+      scene.fog = new THREE.Fog( 0xddffdd, 1, 10000 );
 
       // === camera ===
       const camera = new THREE.PerspectiveCamera( 60, width / height, 1, 10000 );
@@ -29,13 +29,16 @@
 
       // === box ===
       const geometry = new THREE.BoxGeometry(100,100,100);
-//      const geometry = new THREE.TorusGeometry(100, 8, 16, 100); // 形状
+      // const geometry = new THREE.TorusGeometry(100, 8, 16, 100); // 形状
+
 
       const loader = new THREE.TextureLoader();
-      const texture = loader.load('../assets/dog_img.jpg');
-      const material = new THREE.MeshNormalMaterial({
+      const texture = loader.load('static/dog.jpg');
+      const material = new THREE.MeshBasicMaterial({
         map: texture
-      }); // テクスチャ
+      });
+
+      // テクスチャ
       const boxes = new THREE.Group();
       for (let i = 0; i < 500; i ++ ) {
         const mesh = new THREE.Mesh (geometry, material);
@@ -85,8 +88,8 @@
       render() {
         const time = Date.now () * 0.001;
         const rx = Math.sin (time * 0.7) * 0.5,
-          ry = Math.sin (time * 0.3) * 3,
-          rz = Math.sin (time * 0.2) * 0.5;
+          ry = Math.sin (time * 0.3) * 0.7,
+          rz = Math.sin (time * 0.2) * 0.3;
         // 箱を回転させる
         this.camera.position.x += this.camera.position.x * 0.5;
         this.camera.position.y += this.camera.position.y * 0.5;

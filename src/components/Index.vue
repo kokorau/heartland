@@ -28,5 +28,12 @@
 </script>
 
 <style>
-
+  #wrapper {
+    z-index: 2;
+    position: absolute;
+  }
+  #bg {
+    z-index: 1;
+    position: absolute;
+  }
 </style>
