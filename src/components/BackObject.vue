@@ -33,10 +33,12 @@
 
 
       const loader = new THREE.TextureLoader ();
-      const texture = loader.load ('static/dog.jpg');
-      const material = new THREE.MeshBasicMaterial ({
-        map: texture
-      });
+      /* TODO */
+      // const texture = loader.load ('static/dog.jpg');
+      // const material = new THREE.MeshBasicMaterial ({
+      //  map: texture
+      // });
+      const material = new THREE.MeshNormalMaterial ();
 
       // テクスチャ
       const boxes = new THREE.Group ();

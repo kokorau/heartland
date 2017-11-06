@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img class="card-img-top" src="static/yumeka.jpg">
+    <img class="card-img" src="static/yumeka.jpg">
     <div class="card-block">
       <h1 class="card-title">yumeka</h1>
       <p class="card-text">

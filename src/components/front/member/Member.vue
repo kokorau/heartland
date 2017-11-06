@@ -30,6 +30,11 @@
   }
 </script>
 
-<style scoped>
+<style>
+  .card {
 
+  }
+  .card-img {
+    height: 300px;
+  }
 </style>

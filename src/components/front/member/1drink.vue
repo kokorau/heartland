@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-      <img class="card-img-top" src="static/1drink.jpg">
+      <img class="card-img" src="static/1drink.jpg">
       <div class="card-block">
         <h1 class="card-title">1drink</h1>
         <p class="card-text">description</p>

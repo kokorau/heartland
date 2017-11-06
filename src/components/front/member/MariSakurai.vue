@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img class="card-img-top" src="static/mari-sakurai.jpg">
+    <img class="card-img" src="static/mari-sakurai.jpg">
     <div class="card-block">
       <h1 class="card-title">Mari Sakurai</h1>
       <p class="card-text">description</p>
