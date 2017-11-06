@@ -19,8 +19,6 @@
   export default {
     name: 'index',
     components: {
-      FrontContents,
-      BackObject,
       'front-contents': FrontContents,
       'back-object': BackObject
     }
@@ -31,9 +29,14 @@
   #wrapper {
     z-index: 2;
     position: absolute;
+    width: 100%;
+    height: 100%;
   }
   #bg {
     z-index: 1;
-    position: absolute;
+    position: static;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 </style>

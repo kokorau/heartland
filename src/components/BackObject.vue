@@ -18,38 +18,38 @@
       renderer.setSize (width, height);
 
       // === scene ===
-      const scene = new THREE.Scene();
-      scene.background = new THREE.Color( 0xaaaaaa );
-      scene.fog = new THREE.Fog( 0xddffdd, 1, 10000 );
+      const scene = new THREE.Scene ();
+      scene.background = new THREE.Color (0xaaaaaa);
+      scene.fog = new THREE.Fog (0xddffdd, 1, 10000);
 
       // === camera ===
-      const camera = new THREE.PerspectiveCamera( 60, width / height, 1, 10000 );
+      const camera = new THREE.PerspectiveCamera (60, width / height, 1, 10000);
       camera.position.z = 500;
       scene.add (camera);
 
       // === box ===
-      const geometry = new THREE.BoxGeometry(100,100,100);
+      const geometry = new THREE.BoxGeometry (100, 100, 100);
       // const geometry = new THREE.TorusGeometry(100, 8, 16, 100); // 形状
 
 
-      const loader = new THREE.TextureLoader();
-      const texture = loader.load('static/dog.jpg');
-      const material = new THREE.MeshBasicMaterial({
+      const loader = new THREE.TextureLoader ();
+      const texture = loader.load ('static/dog.jpg');
+      const material = new THREE.MeshBasicMaterial ({
         map: texture
       });
 
       // テクスチャ
-      const boxes = new THREE.Group();
-      for (let i = 0; i < 500; i ++ ) {
+      const boxes = new THREE.Group ();
+      for (let i = 0; i < 500; i++) {
         const mesh = new THREE.Mesh (geometry, material);
-        mesh.position.x = Math.random() * 2000 - 1000;
-        mesh.position.y = Math.random() * 2000 - 1000;
-        mesh.position.z = Math.random() * 2000 - 1000;
+        mesh.position.x = Math.random () * 2000 - 1000;
+        mesh.position.y = Math.random () * 2000 - 1000;
+        mesh.position.z = Math.random () * 2000 - 1000;
         // mesh.rotation.x = Math.random() * 2 * Math.PI;
         // mesh.rotation.y = Math.random() * 2 * Math.PI;
         mesh.matrixAutoUpdate = false;
-        mesh.updateMatrix();
-        boxes.add( mesh );
+        mesh.updateMatrix ();
+        boxes.add (mesh);
       }
 
       scene.add (boxes);
@@ -69,7 +69,7 @@
         camera: camera,
         boxes: boxes,
         light: light,
-        mouse: {x: 0, y: 0}
+        mouse: { x: 0, y: 0 }
       }
     },
     name: 'back-object',
@@ -77,15 +77,15 @@
       this.$refs.canvas.appendChild (
         this.renderer.domElement
       );
-      this.animate();
+      this.animate ();
     },
     methods: {
-      animate() {
-        requestAnimationFrame(this.animate);
+      animate () {
+        requestAnimationFrame (this.animate);
 
-        this.render();
+        this.render ();
       },
-      render() {
+      render () {
         const time = Date.now () * 0.001;
         const rx = Math.sin (time * 0.7) * 0.5,
           ry = Math.sin (time * 0.3) * 0.7,
@@ -97,14 +97,22 @@
         this.boxes.rotation.y = ry;
         this.boxes.rotation.z = rz;
 
-        this.camera.lookAt(this.scene.position);
+        this.camera.lookAt (this.scene.position);
 
-        this.renderer.render(this.scene, this.camera);
+        this.renderer.render (this.scene, this.camera);
+      },
+      onWindowResize () {
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix ();
+        this.renderer.setSize (window.innerWidth, window.innerHeight);
+        controls.handleResize ();
       }
     }
   }
 </script>
 
 <style scoped>
-
+  #stage {
+    margin: 0;
+  }
 </style>
