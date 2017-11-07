@@ -10,37 +10,54 @@
     PerspectiveCamera,
     DirectionalLight,
     BoxGeometry,
-    MeshPhongMaterial,
-    Mesh
+    Mesh,
+    MeshNormalMaterial, Group, Color, Fog, OrthographicCamera, MeshPhongMaterial
   } from 'three';
 
   export default {
-    name: 'bg',
-    data () {
+    name: 'model',
+    data: function () {
       // ===== window =====
       const width = window.innerWidth;
       const height = window.innerHeight;
 
       // ===== renderer =====
-      const renderer = new WebGLRenderer ();
-      renderer.setSize(width, height);
+      const renderer = new WebGLRenderer ({ alpha: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize (width, height);
+      renderer.setClearColor (new Color (0xffffff), 0.0);
 
       // ===== scene =====
       const scene = new Scene ();
+      scene.fog = new Fog (0xffffff, 300, 2000);
 
       // ===== camera =====
-      const camera = new PerspectiveCamera (45, width / height, 1, 10000); // FIXME
-      camera.position.set(0, 0, 1000);
+      const camera = new PerspectiveCamera (60, width / height, 1, 10000);
+//      const camera = new OrthographicCamera( width / - 4, width / 4, height / 4, height / - 4, 10, 10000 );
+      camera.position.z = 500;
 
       // ===== light =====
       const light = new DirectionalLight (0xffffff);
       light.position.set (1, 1, 1);
 
       // ===== object =====
-      const geometry = new BoxGeometry (100, 100, 100);
-      const material = new MeshPhongMaterial ({ color: 0x0000ff });
+      const geometry = new BoxGeometry(30, 30, 30);
+      const material = new MeshPhongMaterial();
 
-      const object = new Mesh (geometry, material);
+      const object = new Group();
+
+      const amount = 1000;
+      for (let i=0; i<amount; i++) {
+        const mesh = new Mesh(geometry, material);
+        mesh.position.x = Math.random() * 2000 - 1000;
+        mesh.position.y = Math.random() * 2000 - 1000;
+        mesh.position.z = Math.random() * 2000 - 1000;
+
+        mesh.rotation.x = Math.random() * 2 * Math.PI;
+        mesh.rotation.y = Math.random() * 2 * Math.PI;
+
+        object.add(mesh);
+      }
 
       return {
         scene: scene,
@@ -64,15 +81,14 @@
       animate () {
         requestAnimationFrame(this.animate);
 
-        this.object.rotation.x += 0.01;
-        this.object.rotation.y += 0.01;
+        this.object.rotation.x += 0.005;
+        this.object.rotation.y += 0.005;
         this.renderer.render(this.scene, this.camera);
       },
       onWindowResize () {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix ();
         this.renderer.setSize (window.innerWidth, window.innerHeight);
-        this.composer.setSize (window.innerWidth, window.innerHeight);
       }
     }
   }

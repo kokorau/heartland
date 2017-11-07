@@ -5,8 +5,12 @@
       <front></front>
     </div>
 
-    <div id="back">
-      <bg></bg>
+    <div id="object">
+      <model></model>
+    </div>
+
+    <div id="bg">
+      <img src="static/background.jpg">
     </div>
 
   </div>
@@ -14,12 +18,12 @@
 
 <script>
 import Front from "./front/Index.vue";
-import Bg from "./back/Index.vue";
+import Model from "./back/Index.vue";
 
 export default {
   name: 'app',
   components: {
-    Bg,
+    Model,
     Front
   }
 }
@@ -29,10 +33,24 @@ export default {
   #front {
     z-index: 2;
     position: absolute;
+    width: 100%;
+    height: 100%;
   }
-  #back {
-    z-index: 1;
+  #object {
+    z-index: -1;
     position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  #bg {
+    z-index: -10;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  #bg img {
+    width: 100%;
+    height: 100%
   }
   body {
     margin: 0;
