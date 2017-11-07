@@ -1,12 +1,24 @@
 <template>
-  <div>
-    <h1
-      style="color: red; font-size: 5em;"
-    >HEART LAND</h1>
+  <!-- Wrapper -->
+  <div id="wrapper" class="container">
+
+    <div class="row">
+      <div class="col">
+        <fr-title></fr-title>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main" class="row">
+      <member class="col-12"></member>
+    </div>
+
   </div>
 </template>
 
 <script>
+  import Member from './front/member/Member.vue';
+  import Title from './front/Title.vue';
 
   export default {
     name: 'front-contents',
@@ -14,10 +26,16 @@
       return {}
     },
     props: [],
-    components: {}
+    components: {
+      'member': Member,
+      'fr-title': Title
+    }
   }
 </script>
 
 <style scoped>
-
+  #wrapper {
+    width: 100%;
+    height: 100%;
+  }
 </style>
