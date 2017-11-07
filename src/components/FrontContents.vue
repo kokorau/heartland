@@ -2,6 +2,12 @@
   <!-- Wrapper -->
   <div id="wrapper" class="container">
 
+    <div class="row">
+      <div class="col">
+        <fr-title></fr-title>
+      </div>
+    </div>
+
     <!-- Main -->
     <div id="main" class="row">
       <member class="col-12"></member>
@@ -11,7 +17,8 @@
 </template>
 
 <script>
-  import Member from './front/member/Member.vue'
+  import Member from './front/member/Member.vue';
+  import Title from './front/Title.vue';
 
   export default {
     name: 'front-contents',
@@ -20,7 +27,8 @@
     },
     props: [],
     components: {
-      'member': Member
+      'member': Member,
+      'fr-title': Title
     }
   }
 </script>

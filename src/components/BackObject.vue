@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="stage"
-    ref="canvas"
-  ></div>
+  <div id="stage" ref="canvas"></div>
 </template>
 
 <script>
