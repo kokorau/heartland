@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "postprocessing": "^3.1.0",
     "three": "^0.87.1",
     "vue": "^2.5.2"
   },

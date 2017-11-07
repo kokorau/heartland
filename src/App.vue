@@ -1,24 +1,40 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+
+    <div id="front">
+      <front></front>
+    </div>
+
+    <div id="back">
+      <bg></bg>
+    </div>
+
   </div>
 </template>
 
 <script>
+import Front from "./front/Index.vue";
+import Bg from "./back/Index.vue";
+
 export default {
   name: 'app',
   components: {
+    Bg,
+    Front
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #front {
+    z-index: 2;
+    position: absolute;
+  }
+  #back {
+    z-index: 1;
+    position: fixed;
+  }
+  body {
+    margin: 0;
+  }
 </style>
