@@ -13,7 +13,6 @@
     MeshPhongMaterial,
     Mesh
   } from 'three';
-  import { EffectComposer, GlitchPass, RenderPass } from 'postprocessing';
 
   export default {
     name: 'bg',
