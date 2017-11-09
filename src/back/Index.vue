@@ -29,11 +29,11 @@
 
       // ===== scene =====
       const scene = new Scene ();
-      scene.fog = new Fog (0xffffff, 300, 2000);
+      scene.fog = new Fog (0x777777, 1, 600);
 
       // ===== camera =====
       const camera = new PerspectiveCamera (60, width / height, 1, 10000);
-//      const camera = new OrthographicCamera( width / - 4, width / 4, height / 4, height / - 4, 10, 10000 );
+      // const camera = new OrthographicCamera( width / - 4, width / 4, height / 4, height / - 4, 10, 10000 );
       camera.position.z = 500;
 
       // ===== light =====
@@ -41,20 +41,20 @@
       light.position.set (1, 1, 1);
 
       // ===== object =====
-      const geometry = new BoxGeometry(30, 30, 30);
+      const geometry = new BoxGeometry(5, 400, 3);
       const material = new MeshPhongMaterial();
 
       const object = new Group();
 
-      const amount = 1000;
+      const amount = 500;
       for (let i=0; i<amount; i++) {
         const mesh = new Mesh(geometry, material);
         mesh.position.x = Math.random() * 2000 - 1000;
-        mesh.position.y = Math.random() * 2000 - 1000;
+//        mesh.position.y = Math.random() * 2000 - 1000;
         mesh.position.z = Math.random() * 2000 - 1000;
 
-        mesh.rotation.x = Math.random() * 2 * Math.PI;
-        mesh.rotation.y = Math.random() * 2 * Math.PI;
+//        mesh.rotation.x = Math.random() * 2 * Math.PI;
+//        mesh.rotation.y = Math.random() * 2 * Math.PI;
 
         object.add(mesh);
       }
@@ -81,8 +81,11 @@
       animate () {
         requestAnimationFrame(this.animate);
 
-        this.object.rotation.x += 0.005;
-        this.object.rotation.y += 0.005;
+        this.camera.position.x += 0.1;
+        this.camera.position.y += 0.1;
+
+        this.camera.lookAt( this.scene.position );
+
         this.renderer.render(this.scene, this.camera);
       },
       onWindowResize () {

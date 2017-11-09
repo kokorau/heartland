@@ -12,7 +12,8 @@
   "dependencies": {
     "postprocessing": "^3.1.0",
     "three": "^0.87.1",
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-awesome": "^2.3.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
