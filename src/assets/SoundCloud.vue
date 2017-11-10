@@ -1,5 +1,5 @@
 <template>
-  <a :href="link">
+  <a :href="link" target="_blank">
     <icon name="soundcloud" class="soundcloud-icon"></icon>
   </a>
 </template>

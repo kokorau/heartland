@@ -1,5 +1,5 @@
 <template>
-  <a :href="link">
+  <a :href="link" target="_blank">
     <icon name="twitter" class="twitter-icon"></icon>
   </a>
 </template>
