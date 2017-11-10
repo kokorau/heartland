@@ -2,7 +2,7 @@
   <member
     name="Tomad"
     description="description"
-    twitterLink="#"
+    twitterLink="https://twitter.com/tomad"
     imgSrc="static/tomad.jpg"
   ></member>
 </template>
