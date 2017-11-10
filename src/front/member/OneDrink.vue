@@ -1,17 +1,26 @@
 <template>
-  <div class="card">
-    <img class="card-ig" src="">
-    <h3 class="card-title">1drink</h3>
-    <p class="card-text">description</p>
-    <twitter></twitter>
-  </div>
+  <member
+    name="1drink"
+    twitterLink="#"
+    imgSrc="static/1drink.jpg"
+  >
+    <div slot="description">
+      <p>Technoを軸に様々なダンスミュージックの境界を彷徨いながら現在にいたる。</p>
+      <p></p>ときどき街の片隅をにぎわせている。
+    </div>
+  </member>
 </template>
 
 <script>
   import Twitter from "../../assets/Twitter.vue";
+  import Member from "./Member.vue";
+
   export default {
     name: 'one-drink',
-    components: { Twitter }
+    components: {
+      Member,
+      Twitter
+    }
   }
 </script>
 

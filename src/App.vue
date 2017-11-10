@@ -44,7 +44,7 @@ export default {
   }
   #bg {
     z-index: -10;
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
   }

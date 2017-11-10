@@ -1,17 +1,22 @@
 <template>
-  <div class="card">
-    <img class="card-ig" src="">
-    <h3 class="card-title">kag</h3>
-    <p class="card-text">description</p>
-    <twitter></twitter>
-  </div>
+  <member
+    name="KAG"
+    description="description"
+    twitterLink="#"
+    imgSrc="static/kag.jpg"
+  ></member>
 </template>
 
 <script>
   import Twitter from "../../assets/Twitter.vue";
+  import Member from "./Member.vue";
+
   export default {
     name: 'kag',
-    components: { Twitter }
+    components: {
+      Member,
+      Twitter
+    }
   }
 </script>
 

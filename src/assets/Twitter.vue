@@ -1,6 +1,6 @@
 <template>
   <a :href="link">
-    <icon name="twitter"></icon>
+    <icon name="twitter" class="twitter-icon"></icon>
   </a>
 </template>
 
@@ -12,5 +12,10 @@
 </script>
 
 <style>
-
+  .twitter-icon {
+    color: gray;
+  }
+  .twitter-icon:hover {
+    color: rgb(0, 172, 237);
+  }
 </style>

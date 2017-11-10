@@ -1,11 +1,30 @@
 <template>
   <div>
-    <kag></kag>
-    <kent></kent>
-    <mari-sakurai></mari-sakurai>
-    <one-drink></one-drink>
-    <tomad></tomad>
-    <yumeka></yumeka>
+
+    <el-row :gutter="10" class="member-row">
+      <el-col :span="8">
+        <kag></kag>
+      </el-col>
+      <el-col :span="8">
+        <kent></kent>
+      </el-col>
+      <el-col :span="8">
+       <mari-sakurai></mari-sakurai>
+      </el-col>
+    </el-row>
+
+    <el-row :gutter="10" class="member-row">
+      <el-col :span="8">
+        <one-drink></one-drink>
+      </el-col>
+      <el-col :span="8">
+        <tomad></tomad>
+      </el-col>
+      <el-col :span="8">
+        <yumeka></yumeka>
+      </el-col>
+    </el-row>
+
   </div>
 </template>
 <script>
@@ -28,5 +47,8 @@
   }
 </script>
 <style>
-
+  .member-row {
+    margin-bottom: 10px;
+    max-width: 1200px;
+  }
 </style>
