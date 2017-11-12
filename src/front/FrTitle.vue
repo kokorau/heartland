@@ -1,5 +1,6 @@
 <template>
   <div class="card">
+    <!--titleを1ページに配置したい-->
     <h1>Heart Land</h1>
   </div>
 </template>

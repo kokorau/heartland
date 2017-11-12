@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 
-    <!--<fr-title></fr-title>-->
+    <fr-title></fr-title>
 
     <fr-member></fr-member>
 
