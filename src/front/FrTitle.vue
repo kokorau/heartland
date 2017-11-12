@@ -1,7 +1,8 @@
 <template>
   <div class="title">
     <p>HEARTLAND</p>
-    <p>2017/12/17 AOYAMA OATH</p>
+    <p>2017/12/17</p>
+    <p>AOYAMA OATH</p>
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 
 <style>
   .title {
+    text-align: right;
     color: #ff3030;
     font-size: 100px;
   }

@@ -1,5 +1,5 @@
 <template>
-  <section id="member">
+  <section id="member" class="member">
 
     <h2 class="section-title">MEMBER</h2>
 
@@ -54,6 +54,9 @@
   }
 </script>
 <style>
+  .member {
+    margin-right: 0;
+  }
   .member-row {
     margin-bottom: 10px;
     max-width: 1200px;

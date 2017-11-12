@@ -1,13 +1,13 @@
 <template>
   <div class="container">
 
-    <fr-title></fr-title>
+    <fr-title class="content"></fr-title>
 
-    <fr-member></fr-member>
+    <fr-member class="content"></fr-member>
 
-    <!--<fr-description></fr-description>-->
+    <fr-description class="content"></fr-description>
 
-    <!--<fr-info></fr-info>-->
+    <fr-info class="content"></fr-info>
 
   </div>
 </template>
@@ -28,11 +28,11 @@
   }
 </script>
 <style>
+  .content {
+    text-align: right;
+  }
   .container {
-    padding-left: 60px;
-    padding-right: 60px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1080px;
   }
 </style>

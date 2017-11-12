@@ -1,5 +1,5 @@
 <template>
-  <el-card :body-style="cardStyle">
+  <el-card :body-style="cardStyle" class="member-card">
     <img :src="imgSrc" class="image"/>
     <div style="padding:14px;">
       <h3>
