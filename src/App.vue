@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <div id="front">
       <front></front>
     </div>
@@ -12,7 +11,6 @@
     <div id="bg">
       <img src="static/main.jpg">
     </div>
-
   </div>
 </template>
 
@@ -26,7 +24,6 @@ export default {
     Model,
     Front
   }
-}
 </script>
 
 <style>
