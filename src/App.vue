@@ -6,7 +6,7 @@
     </div>
 
     <div id="object">
-      <model></model>
+      <!--<model></model>-->
     </div>
 
     <div id="bg">
