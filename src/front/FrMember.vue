@@ -4,25 +4,28 @@
     <h2 class="section-title">MEMBER</h2>
 
     <el-row :gutter="10" class="member-row">
-      <el-col :span="8">
+      <el-col :span="12">
         <kag></kag>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="12">
         <kent></kent>
-      </el-col>
-      <el-col :span="8">
-       <mari-sakurai></mari-sakurai>
       </el-col>
     </el-row>
 
     <el-row :gutter="10" class="member-row">
-      <el-col :span="8">
+      <el-col :span="12">
+       <mari-sakurai></mari-sakurai>
+      </el-col>
+      <el-col :span="12">
         <one-drink></one-drink>
       </el-col>
-      <el-col :span="8">
+    </el-row>
+
+    <el-row :gutter="10" class="member-row">
+      <el-col :span="12">
         <tomad></tomad>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="12">
         <yumeka></yumeka>
       </el-col>
     </el-row>
@@ -36,9 +39,11 @@
   import OneDrink from "./member/OneDrink.vue";
   import Tomad from "./member/Tomad.vue";
   import Yumeka from "./member/Yumeka.vue";
+  import ElCard from "../../node_modules/element-ui/packages/card/src/main.vue";
 
   export default {
     components: {
+      ElCard,
       Yumeka,
       Tomad,
       OneDrink,

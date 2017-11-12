@@ -5,7 +5,6 @@
 </template>
 <script>
  const THREE = require('three')
-    , EffectComposer = require('three-effectcomposer')(THREE)
 
   export default {
     name: 'model',
@@ -66,10 +65,6 @@
       this.scene.add (this.camera);
       this.scene.add (this.light);
       this.scene.add (this.object);
-
-      // ===== composer =====
-      this.composer = new EffectComposer(this.renderer);
-      this.composer.addPass(new EffectComposer.RenderPass(this.scene, this.camera))
 
     },
     mounted () {

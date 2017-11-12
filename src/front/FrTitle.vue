@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
-    <!--titleを1ページに配置したい-->
-    <h1>HEARTLAND</h1>
+  <div class="title">
+    <p>HEARTLAND</p>
+    <p>2017/12/17 AOYAMA OATH</p>
   </div>
 </template>
 
@@ -12,12 +12,8 @@
 </script>
 
 <style>
-  #title {
-    width: 100%;
-    height: 60px;
-    text-align: center;
-  }
-  #title h1 {
+  .title {
+    color: #ff3030;
     font-size: 100px;
   }
 </style>
