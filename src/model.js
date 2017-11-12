@@ -1,5 +1,9 @@
 import * as THREE from 'three';
+import {EffectComposer, ShockwavePass, GlitchPass, RenderPass} from 'postprocessing';
 import './model.css';
+import camera from './model/camera';
+import light from './model/light';
+import scene from './model/light';
 
 // ===== window =====
 const width = window.innerWidth;
@@ -11,24 +15,13 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize (width, height);
 renderer.setClearColor (new THREE.Color (0xffffff), 0.0);
 
-// ===== scene =====
-const scene = new THREE.Scene ();
-scene.fog = new THREE.Fog (0x777777, 1, 600);
-
-// ===== camera =====
-const camera = new THREE.PerspectiveCamera (60, width / height, 1, 10000);
-// const camera = new THREE.OrthographicCamera( width / - 4, width / 4, height / 4, height / - 4, 10, 10000 );
-camera.position.z = 500;
-
-// ===== light =====
-const light = new THREE.DirectionalLight (0xffffff);
-light.position.set (1, 1, 1);
-
 // ===== object =====
-const geometry = new THREE.BoxGeometry(5, 400, 3);
-const material = new THREE.MeshPhongMaterial();
+const geometry = new THREE.BoxGeometry(100, 100, 3);
+const material = new THREE.MeshNormalMaterial();
 
 const object = new THREE.Group();
+
+const clock = new THREE.Clock();
 
 const amount = 500;
 for (let i=0; i<amount; i++) {
@@ -47,8 +40,17 @@ for (let i=0; i<amount; i++) {
 window.addEventListener ('resize', onWindowResize);
 scene.add (camera);
 scene.add (light);
-scene.add (object);
+// scene.add (object);
 
+// ===== postprocessing =====
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+
+const pass = new GlitchPass();
+pass.renderToScreen = true;
+composer.addPass(pass);
+
+// ===== render =====
 document.getElementById('object-stage').appendChild(renderer.domElement);
 
 animate();
@@ -61,7 +63,8 @@ function animate () {
 
   camera.lookAt( scene.position );
 
-  renderer.render(scene, camera);
+  composer.render(clock.getDelta())
+  // renderer.render(scene, camera);
 }
 
 function onWindowResize () {

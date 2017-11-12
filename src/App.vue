@@ -10,7 +10,7 @@
     </div>
 
     <div id="bg">
-      <img src="static/main.jpg">
+      <!--<img src="static/main.jpg">-->
     </div>
 
   </div>
@@ -30,6 +30,12 @@ export default {
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+
+  #app {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 20px;
+  }
   #front {
     z-index: 2;
     position: absolute;
