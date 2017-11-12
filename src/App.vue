@@ -10,7 +10,7 @@
     </div>
 
     <div id="bg">
-      <img src="static/background.jpg">
+      <img src="static/main.jpg">
     </div>
 
   </div>
@@ -49,7 +49,6 @@ export default {
     width: 100%;
   }
   #bg img {
-    width: 100%;
     height: 100%
   }
   body {

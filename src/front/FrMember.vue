@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <section id="member">
+
+    <h2 class="section-title">MEMBER</h2>
 
     <el-row :gutter="10" class="member-row">
       <el-col :span="8">
@@ -25,7 +27,7 @@
       </el-col>
     </el-row>
 
-  </div>
+  </section>
 </template>
 <script>
   import Kag from "./member/Kag.vue";
