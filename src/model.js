@@ -2,8 +2,9 @@ import * as THREE from 'three';
 import {EffectComposer, ShockwavePass, GlitchPass, RenderPass} from 'postprocessing';
 import './model.css';
 import camera from './model/camera';
-import light from './model/light';
+// import light from './model/light';
 import scene from './model/light';
+import object from './model/boxes';
 
 // ===== window =====
 const width = window.innerWidth;
@@ -15,26 +16,10 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize (width, height);
 renderer.setClearColor (new THREE.Color (0xffffff), 0.0);
 
-// ===== object =====
-const geometry = new THREE.BoxGeometry(100, 100, 3);
-const material = new THREE.MeshNormalMaterial();
+// ===== light =====
+const light = new THREE.DirectionalLight (0xffffff);
+light.position.set (1, 1, 1);
 
-const object = new THREE.Group();
-
-const clock = new THREE.Clock();
-
-const amount = 500;
-for (let i=0; i<amount; i++) {
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.position.x = Math.random() * 2000 - 1000;
-//        mesh.position.y = Math.random() * 2000 - 1000;
-  mesh.position.z = Math.random() * 2000 - 1000;
-
-//        mesh.rotation.x = Math.random() * 2 * Math.PI;
-//        mesh.rotation.y = Math.random() * 2 * Math.PI;
-
-  object.add(mesh);
-}
 
 // ===== assembly  =====
 window.addEventListener ('resize', onWindowResize);
