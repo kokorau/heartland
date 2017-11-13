@@ -3,6 +3,7 @@
     name="Mari Sakurai"
     description="description"
     twitterLink=""
+    soundcloudLink="https://soundcloud.com/marisakurai"
     imgSrc="static/mari-sakurai.jpg"
   ></member>
 </template>

@@ -1,26 +1,18 @@
 <template>
-  <div class="container">
-
-    <fr-title class="content"></fr-title>
-
-    <fr-member class="content"></fr-member>
-
-    <fr-description class="content"></fr-description>
-
-    <fr-info class="content"></fr-info>
-
+  <div class="front">
+    <fr-title></fr-title>
+    <fr-member></fr-member>
+    <fr-description></fr-description>
   </div>
 </template>
 <script>
   import FrMember from './FrMember.vue';
   import FrTitle from "./FrTitle.vue";
   import FrDescription from "./FrDescription.vue";
-  import FrInfo from "./Info.vue";
 
   export default {
     name: 'front',
     components: {
-      FrInfo,
       FrDescription,
       FrTitle,
       FrMember
@@ -28,11 +20,14 @@
   }
 </script>
 <style>
-  .content {
+
+  .front {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #ff3030;
     text-align: right;
   }
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
+
 </style>

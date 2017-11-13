@@ -1,7 +1,8 @@
 <template>
   <member
     name="1drink"
-    twitterLink="#"
+    twitterLink="https://twitter.com/0_drink"
+    soundcloudLink="https://soundcloud.com/1-drink"
     imgSrc="static/1drink.jpg"
   >
     <div slot="description">

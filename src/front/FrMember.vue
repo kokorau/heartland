@@ -3,32 +3,12 @@
 
     <h2 class="section-title">MEMBER</h2>
 
-    <el-row :gutter="10" class="member-row">
-      <el-col :span="12">
-        <kag></kag>
-      </el-col>
-      <el-col :span="12">
-        <kent></kent>
-      </el-col>
-    </el-row>
-
-    <el-row :gutter="10" class="member-row">
-      <el-col :span="12">
-       <mari-sakurai></mari-sakurai>
-      </el-col>
-      <el-col :span="12">
-        <one-drink></one-drink>
-      </el-col>
-    </el-row>
-
-    <el-row :gutter="10" class="member-row">
-      <el-col :span="12">
-        <tomad></tomad>
-      </el-col>
-      <el-col :span="12">
-        <yumeka></yumeka>
-      </el-col>
-    </el-row>
+    <kag></kag>
+    <kent></kent>
+    <mari-sakurai></mari-sakurai>
+    <one-drink></one-drink>
+    <tomad></tomad>
+    <yumeka></yumeka>
 
   </section>
 </template>
@@ -49,16 +29,12 @@
       OneDrink,
       MariSakurai,
       Kent,
-      Kag },
+      Kag
+    },
     name: 'fr-member'
   }
 </script>
 <style>
   .member {
-    margin-right: 0;
-  }
-  .member-row {
-    margin-bottom: 10px;
-    max-width: 1200px;
   }
 </style>

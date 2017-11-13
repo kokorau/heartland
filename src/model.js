@@ -22,18 +22,20 @@ light.position.set (1, 1, 1);
 
 
 // ===== assembly  =====
+const clock = new THREE.Clock();
+
 window.addEventListener ('resize', onWindowResize);
 scene.add (camera);
 scene.add (light);
 // scene.add (object);
 
 // ===== postprocessing =====
-const composer = new EffectComposer(renderer);
-composer.addPass(new RenderPass(scene, camera));
-
-const pass = new GlitchPass();
-pass.renderToScreen = true;
-composer.addPass(pass);
+// const composer = new EffectComposer(renderer);
+// composer.addPass(new RenderPass(scene, camera));
+//
+// const pass = new GlitchPass();
+// pass.renderToScreen = true;
+// composer.addPass(pass);
 
 // ===== render =====
 document.getElementById('object-stage').appendChild(renderer.domElement);
@@ -48,8 +50,8 @@ function animate () {
 
   camera.lookAt( scene.position );
 
-  composer.render(clock.getDelta())
-  // renderer.render(scene, camera);
+  // composer.render(clock.getDelta())
+  renderer.render(scene, camera);
 }
 
 function onWindowResize () {

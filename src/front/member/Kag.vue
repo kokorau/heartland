@@ -2,7 +2,7 @@
   <member
     name="KAG"
     description="description"
-    twitterLink="#"
+    twitterLink="https://twitter.com/shi10hiwa3"
     imgSrc="static/kag.jpg"
   ></member>
 </template>

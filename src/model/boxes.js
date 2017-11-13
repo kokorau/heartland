@@ -1,10 +1,10 @@
+import * as THREE from 'three';
+
 // ===== object =====
 const geometry = new THREE.BoxGeometry(100, 100, 3);
 const material = new THREE.MeshNormalMaterial();
 
 const object = new THREE.Group();
-
-const clock = new THREE.Clock();
 
 const amount = 500;
 for (let i=0; i<amount; i++) {

@@ -1,9 +1,15 @@
 <template>
-  <div class="title">
-    <p>HEARTLAND</p>
-    <p>2017/12/17</p>
-    <p>AOYAMA OATH</p>
+
+  <div>
+
+    <div class="title">
+      <p>HEARTLAND</p>
+      <p>2017/12/17</p>
+      <p>AOYAMA OATH</p>
+    </div>
+
   </div>
+
 </template>
 
 <script>
@@ -14,8 +20,11 @@
 
 <style>
   .title {
-    text-align: right;
-    color: #ff3030;
     font-size: 100px;
+    text-align: right;
+    letter-spacing: -3px;
+  }
+  .title p {
+    margin: 0;
   }
 </style>
