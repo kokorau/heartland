@@ -1,30 +1,39 @@
-<template>
+<!-- 遊びでpugとsass使ってみた。 -->
 
-  <div>
+<template lang="pug">
 
-    <div class="title">
-      <p>HEARTLAND</p>
-      <p>2017/12/17</p>
-      <p>AOYAMA OATH</p>
-    </div>
+  div.title
 
-  </div>
+    div.title-content
+
+      p HEARTLAND
+      p 2017/12/17
+      p AOYAMA OATH
 
 </template>
 
 <script>
   export default {
-    name: 'fr-title'
+    name: 'fr-title',
   }
 </script>
 
-<style>
-  .title {
-    font-size: 100px;
-    text-align: right;
-    letter-spacing: -3px;
-  }
-  .title p {
-    margin: 0;
-  }
+<style lang="sass">
+  .title
+    font-size: 160px
+    text-align: right
+    letter-spacing: -3px
+    display: table
+    width: 100%
+    height: 88vh
+
+    p
+      margin-top: -20px
+      margin-bottom: -20px
+
+
+  .title-content
+    display: table-cell
+    vertical-align: middle
+
 </style>

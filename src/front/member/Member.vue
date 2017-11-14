@@ -21,9 +21,9 @@
 
       </h3>
 
-      <slot name="description" class="m-description">
-        <!-- description comes here -->
-      </slot>
+      <div class="m-description">
+        <slot name="description"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -52,7 +52,7 @@
     color: #fff;
   }
   .card {
-    background-color: rgba(0, 0, 0, 0.0);
+    background-color: rgba(0, 0, 0, 0.4);
     border: none;
     border-radius: 2px;
     color: #ff3030;

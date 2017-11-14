@@ -9,28 +9,33 @@
       <!--<model></model>-->
     </div>
 
-    <div id="bg">
-      <img src="static/main.jpg">
-    </div>
+    <!--<div id="bg">-->
+    <!--<img src="static/main.jpg">-->
+    <!--</div>-->
+    <bg></bg>
 
   </div>
 </template>
 
 <script>
-import Front from "./front/Index.vue";
-import Model from "./back/Index.vue";
+  import Front from "./front/Index.vue";
+  import Model from "./back/Index.vue";
+  import Bg from "./bg/Index.vue";
 
-export default {
-  name: 'app',
-  components: {
-    Model,
-    Front
+  export default {
+    name: 'app',
+    components: {
+      Bg,
+      Model,
+      Front
+    }
   }
-}
 </script>
 
-<style>
+<style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+  @import "global";
+
   .container {
     margin-right: 15px;
     margin-left: 15px;
@@ -40,21 +45,14 @@ export default {
     font-family: 'Bowlby One SC', cursive;
     font-size: 20px;
   }
+
   #object {
     z-index: -1;
     position: fixed;
     width: 100%;
     height: 100%;
   }
-  #bg {
-    z-index: -10;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-  }
-  #bg img {
-    height: 100%
-  }
+
   body {
     margin: 0;
   }

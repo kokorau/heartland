@@ -35,6 +35,7 @@
   }
 </script>
 <style>
-  .member {
+  .section-title {
+    font-size: 60px;
   }
 </style>

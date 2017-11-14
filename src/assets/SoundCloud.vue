@@ -1,6 +1,6 @@
 <template>
-  <a :href="link" target="_blank">
-    <icon name="soundcloud" class="soundcloud-icon"></icon>
+  <a :href="link" target="_blank" class="soundcloud">
+    <icon name="soundcloud" scale="1.3"></icon>
   </a>
 </template>
 
@@ -12,10 +12,10 @@
 </script>
 
 <style>
-  .soundcloud-icon {
+  .soundcloud icon {
     color: gray;
   }
-  .soundcloud-icon:hover {
+  .soundcloud icon:hover {
     color: rgb(255, 119, 0);
   }
 </style>

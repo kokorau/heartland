@@ -1,6 +1,6 @@
 <template>
   <a :href="link" target="_blank">
-    <icon name="twitter" class="twitter-icon"></icon>
+    <icon name="twitter" class="twitter-icon" scale="1.1"></icon>
   </a>
 </template>
 

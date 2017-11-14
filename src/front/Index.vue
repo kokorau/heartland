@@ -26,7 +26,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    color: #ff3030;
+    color: rgb(255, 0, 0);
     text-align: right;
   }
 
