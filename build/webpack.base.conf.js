@@ -11,7 +11,7 @@ function resolve (dir) {
 module.exports = {
   entry: {
     vue: './src/main.js',
-    three: './src/model.js'
+    three: './src/model/model.js'
   },
   output: {
     path: config.build.assetsRoot,

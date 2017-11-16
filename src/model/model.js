@@ -1,10 +1,9 @@
 import * as THREE from 'three';
 import {EffectComposer, ShockwavePass, GlitchPass, RenderPass} from 'postprocessing';
 import './model.css';
-import camera from './model/camera';
-// import light from './model/light';
-import scene from './model/light';
-import object from './model/boxes';
+import camera from './camera';
+import scene from './light';
+import object from './boxes';
 
 // ===== window =====
 const width = window.innerWidth;

@@ -10,11 +10,7 @@ const amount = 500;
 for (let i=0; i<amount; i++) {
   const mesh = new THREE.Mesh(geometry, material);
   mesh.position.x = Math.random() * 2000 - 1000;
-//        mesh.position.y = Math.random() * 2000 - 1000;
   mesh.position.z = Math.random() * 2000 - 1000;
-
-//        mesh.rotation.x = Math.random() * 2 * Math.PI;
-//        mesh.rotation.y = Math.random() * 2 * Math.PI;
 
   object.add(mesh);
 }

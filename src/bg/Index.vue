@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.bg
+  div.bg(ref="bg")
     img(src="static/main.jpg")
 </template>
 
@@ -8,14 +8,36 @@
   export default {
     name: 'bg',
     data () {
-      return {}
+      return {
+      }
     },
-    props: [],
-    components: {}
+
+    mounted () {
+      window.addEventListener ('resize', this.onWindowResize);
+    },
+
+    methods: {
+
+      onWindowResize () {
+        const $bg = this.$refs.bg;
+
+        this.$store.commit('setBgSize',
+          $bg.clientWidth,
+          $bg.clientHeight
+        );
+
+      }
+
+    },
+
+
+
   }
+
 </script>
 
 <style lang="sass">
+
   .bg
     z-index: -10
     position: fixed
@@ -23,4 +45,9 @@
 
     img
       height: 100%
+
+  .bg-xs
+    position: fixed
+    height: 100%
+
 </style>

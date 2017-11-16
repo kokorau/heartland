@@ -1,16 +1,15 @@
-<template>
-  <section id="member" class="member">
+<template lang="pug">
+  section#member.member
 
-    <h2 class="section-title">MEMBER</h2>
+    h2.section-title MEMBER
 
-    <kag></kag>
-    <kent></kent>
-    <mari-sakurai></mari-sakurai>
-    <one-drink></one-drink>
-    <tomad></tomad>
-    <yumeka></yumeka>
+    kag
+    kent
+    mari-sakurai
+    one-drink
+    tomad
+    yumeka
 
-  </section>
 </template>
 <script>
   import Kag from "./member/Kag.vue";
@@ -22,6 +21,7 @@
   import ElCard from "../../node_modules/element-ui/packages/card/src/main.vue";
 
   export default {
+    name: 'fr-member',
     components: {
       ElCard,
       Yumeka,
@@ -30,12 +30,11 @@
       MariSakurai,
       Kent,
       Kag
-    },
-    name: 'fr-member'
+    }
   }
 </script>
-<style>
-  .section-title {
-    font-size: 60px;
-  }
+<style lang="sass">
+  .section-title
+    font-size: 60px
+
 </style>

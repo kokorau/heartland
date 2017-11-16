@@ -1,31 +1,15 @@
-<template>
-  <div class="card">
-    <img :src="imgSrc" class="image"/>
-    <div>
+<template lang="pug">
+  div.card
+    img(:src="imgSrc")
 
-      <h3 class="m-name">
+    div
+      h3.m-name {{name}}
+        span
+          twitter(v-if="twitterLink != ''", :link="twitterLink")
+          soundcloud(v-if="soundcloudLink != ''", :link="soundcloudLink")
 
-        {{name}}
-
-        <span>
-          <twitter
-            v-if="twitterLink != ''"
-            :link="twitterLink"
-          ></twitter>
-
-          <soundcloud
-            v-if="soundcloudLink != ''"
-            :link="soundcloudLink"
-          ></soundcloud>
-        </span>
-
-      </h3>
-
-      <div class="m-description">
-        <slot name="description"></slot>
-      </div>
-    </div>
-  </div>
+      div.m-description
+        slot(name="description")
 </template>
 
 <script>
@@ -47,25 +31,24 @@
   }
 </script>
 
-<style>
-  .m-description {
-    color: #fff;
-  }
-  .card {
-    background-color: rgba(0, 0, 0, 0.4);
-    border: none;
-    border-radius: 2px;
-    color: #ff3030;
-    max-width: 800px;
-    margin-right: 0;
-    margin-left: auto;
-  }
-  .m-name {
-   margin: 0;
-  }
-  .image {
-    width: 100%;
-    height: 254px;
-    object-fit: cover;
-  }
+<style lang="sass">
+  .m-description
+    color: #fff
+
+  .card
+    background-color: rgba(0, 0, 0, 0.3)
+    border: none
+    border-radius: 2px
+    color: #ff3030
+    max-width: 800px
+    margin-right: 0
+    margin-left: auto
+    img
+      width: 100%
+      height: 254px
+      object-fit: cover
+
+  .m-name
+     margin: 0
+
 </style>

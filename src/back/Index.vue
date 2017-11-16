@@ -1,10 +1,8 @@
-<template>
-  <div>
-    <div ref="stage"></div>
-  </div>
+<template lang="pug">
+    div(ref="stage")
 </template>
 <script>
- const THREE = require('three')
+ const THREE = require('three');
 
   export default {
     name: 'model',

@@ -1,10 +1,10 @@
-<template>
-  <member
+<template lang="pug">
+  member(
     name="KAG"
-    description="description"
     twitterLink="https://twitter.com/shi10hiwa3"
-    imgSrc="static/kag.jpg"
-  ></member>
+    imgSrc="static/kag.jpg")
+    div(slot="description")
+      p おっぱい大好き
 </template>
 
 <script>

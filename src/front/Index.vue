@@ -1,10 +1,10 @@
-<template>
-  <div class="front">
-    <fr-title></fr-title>
-    <fr-member></fr-member>
-    <fr-description></fr-description>
-  </div>
+<template lang="pug">
+  div.front(ref="fr")
+    fr-title
+    fr-member
+    fr-description
 </template>
+
 <script>
   import FrMember from './FrMember.vue';
   import FrTitle from "./FrTitle.vue";
@@ -12,6 +12,26 @@
 
   export default {
     name: 'front',
+
+    mounted () {
+      window.addEventListener ('resize', this.onWindowResize);
+    },
+
+    methods: {
+
+      onWindowResize () {
+        const $fr = this.$refs.fr;
+
+        this.$store.commit('setFrSize',
+          $fr.clientWidth,
+          $fr.clientWidth
+        );
+      }
+
+    },
+
+
+
     components: {
       FrDescription,
       FrTitle,
@@ -19,15 +39,13 @@
     }
   }
 </script>
-<style>
-
-  .front {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: rgb(255, 0, 0);
-    text-align: right;
-  }
+<style lang="sass">
+  .front
+    z-index: 2
+    position: absolute
+    width: 100%
+    height: 100%
+    color: rgb(255, 0, 0)
+    text-align: right
 
 </style>

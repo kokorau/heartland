@@ -1,7 +1,6 @@
-<template>
-  <a :href="link" target="_blank" class="soundcloud">
-    <icon name="soundcloud" scale="1.3"></icon>
-  </a>
+<template lang="pug">
+  a.soundcloud(:href="link", target="_blank")
+    icon.soundcloud-icon(name="soundcloud", scale="1.3")
 </template>
 
 <script>
@@ -11,11 +10,13 @@
   }
 </script>
 
-<style>
-  .soundcloud icon {
-    color: gray;
-  }
-  .soundcloud icon:hover {
-    color: rgb(255, 119, 0);
-  }
+<style lang="sass">
+  .soundcloud-icon
+    color: gray
+
+  .soundcloud
+    &:hover
+      .soundcloud-icon
+        color: #ff7700
+
 </style>
