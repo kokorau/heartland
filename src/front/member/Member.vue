@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.card
+  div.member
     img(:src="imgSrc")
 
     div

@@ -1,8 +1,10 @@
 <template lang="pug">
-  div.front(ref="fr")
-    fr-title
-    fr-member
-    fr-description
+  el-row
+    el-col(:xs="12", :sm="24", :md="24", :xl="24")
+      div.front(ref="fr")
+        fr-title
+        fr-member
+        fr-description
 </template>
 
 <script>
@@ -22,14 +24,14 @@
       onWindowResize () {
         const $fr = this.$refs.fr;
 
-        this.$store.commit('setFrSize',
-          $fr.clientWidth,
-          $fr.clientWidth
-        );
+        const width = $fr.clientWidth;
+        const height = $fr.clientHeight;
+
+//        $store.commit ('setFrSize', width, height);
+
       }
 
     },
-
 
 
     components: {
@@ -47,5 +49,6 @@
     height: 100%
     color: rgb(255, 0, 0)
     text-align: right
+
 
 </style>
