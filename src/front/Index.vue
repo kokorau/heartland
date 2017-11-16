@@ -1,54 +1,83 @@
 <template lang="pug">
-  el-row
-    el-col(:xs="12", :sm="24", :md="24", :xl="24")
-      div.front(ref="fr")
-        fr-title
-        fr-member
-        fr-description
+  div
+
+    div.fr
+      el-row
+        el-col(:span="span", :offset="24-span")
+          fr
+
+    div.bg
+      el-row
+        el-col(:span="span")
+          bg
+
 </template>
 
 <script>
-  import FrMember from './FrMember.vue';
-  import FrTitle from "./FrTitle.vue";
-  import FrDescription from "./FrDescription.vue";
+  import Fr from "./Fr.vue";
+  import Bg from "./Bg.vue";
 
   export default {
-    name: 'front',
+    name: 'main-content',
 
-    mounted () {
-      window.addEventListener ('resize', this.onWindowResize);
+    data () {
+      return {
+        width: 0
+      }
+    },
+
+    created () {
+      window.addEventListener('resize', this.onResize)
     },
 
     methods: {
-
-      onWindowResize () {
-        const $fr = this.$refs.fr;
-
-        const width = $fr.clientWidth;
-        const height = $fr.clientHeight;
-
-//        $store.commit ('setFrSize', width, height);
-
+      onResize() {
+        this.width = window.innerWidth
       }
-
     },
 
-
-    components: {
-      FrDescription,
-      FrTitle,
-      FrMember
-    }
+    computed: {
+      span () {
+        if (this.width < 768) { // xs
+          console.log('xs');
+          return 24
+        } else if (768 <= this.width && this.width < 992) { // sm
+          console.log('sm');
+          return 24
+        } else if (992 <= this.width && this.width < 1200) { // md
+          console.log('md');
+          return 24
+        } else if (1200 <= this.width && this.width < 1920) { // lg
+          console.log('lg');
+          return 24
+        } else if (1920 <= this.width) { // xl
+          console.log('xl');
+          return 24
+        }
+      }
+    },
+    components: { Fr, Bg }
   }
 </script>
+
 <style lang="sass">
-  .front
+  .fr
     z-index: 2
     position: absolute
     width: 100%
     height: 100%
     color: rgb(255, 0, 0)
     text-align: right
+    margin-left: 15px
+    margin-right: 20px
 
+  .bg
+    z-index: -10
+    position: fixed
+    height: 100%
+
+    img
+      height: 100%
+      object-fit: cover
 
 </style>

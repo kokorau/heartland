@@ -16,8 +16,10 @@
     },
 
     mounted () {
+
       window.addEventListener ('resize', this.onWindowResize);
-      window.addEventListener('scroll', this.onScroll)
+      window.addEventListener('scroll', this.onScroll);
+
     },
 
     methods: {
@@ -30,6 +32,7 @@
       onScroll () {
         this.scrollY = window.pageYOffset;
       }
+
     },
 
     computed: {
@@ -43,18 +46,5 @@
 </script>
 
 <style lang="sass">
-
-  .bg
-    z-index: -10
-    position: fixed
-    height: 100%
-
-    img
-      height: 100%
-      object-fit: cover
-
-  .bg-xs
-    position: fixed
-    height: 100%
 
 </style>

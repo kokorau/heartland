@@ -2,28 +2,24 @@
 
   div#app
 
-    div.front
-      front
+    div.main
+      main-content
 
-    el-row(hidden-sm-only)
-      div#object
+    //el-row(hidden-sm-only)
+    //  div#object
        //model
-
-    bg
 
 </template>
 
 <script>
-  import Front from "./front/Index.vue";
+  import MainContent from "./front/Index.vue";
   import Model from "./back/Index.vue";
-  import Bg from "./bg/Index.vue";
 
   export default {
     name: 'app',
     components: {
-      Bg,
       Model,
-      Front
+      MainContent
     }
   }
 </script>
@@ -32,13 +28,8 @@
   @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC')
   @import "global"
 
-  .container
-    margin-right: 15px
-    margin-left: 15px
-
-  #app
+  .font-bowlby
     font-family: 'Bowlby One SC', cursive
-    font-size: 20px
 
   #object
     z-index: -1
@@ -48,5 +39,5 @@
 
   body
     margin: 0
-
+    font-size: 62.5%
 </style>

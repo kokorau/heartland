@@ -1,15 +1,18 @@
 <template lang="pug">
-  div.member
-    img(:src="imgSrc")
+  el-card.m-card(:body-style="bodyStyle")
 
-    div
-      h3.m-name {{name}}
-        span
-          twitter(v-if="twitterLink != ''", :link="twitterLink")
-          soundcloud(v-if="soundcloudLink != ''", :link="soundcloudLink")
+    img.img(:src="imgSrc")
 
-      div.m-description
-        slot(name="description")
+    div.content(style="contentStyle")
+
+      slot(name="name")
+
+      slot(name="description")
+
+      div.links
+        twitter(v-if="twitterLink", :link="twitterLink")
+        soundcloud(v-if="soundcloudLink", :link="soundcloudLink")
+
 </template>
 
 <script>
@@ -22,6 +25,19 @@
       Twitter
     },
     name: 'member',
+    data () {
+      const bodyStyle = {
+        'padding': '0',
+      };
+      const contentStyle = {
+        padding: '14px'
+      };
+
+      return {
+        bodyStyle: bodyStyle,
+        contentStyle: contentStyle
+      }
+    },
     props: {
       name: { type: String },
       twitterLink: { type: String, default: '' },
@@ -31,24 +47,14 @@
   }
 </script>
 
-<style lang="sass">
-  .m-description
+<style lang="sass" scoped>
+  .img
+    width: 100%
+    max-height: 25vh
+    object-fit: cover
+
+  .el-card
+    background-color: rgba(0, 0, 0, 0.5)
     color: #fff
-
-  .card
-    background-color: rgba(0, 0, 0, 0.3)
-    border: none
-    border-radius: 2px
-    color: #ff3030
-    max-width: 800px
-    margin-right: 0
-    margin-left: auto
-    img
-      width: 100%
-      height: 254px
-      object-fit: cover
-
-  .m-name
-     margin: 0
-
+    font-size: 1.3vh
 </style>
