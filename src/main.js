@@ -5,11 +5,17 @@ import App from './App.vue'
 
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
+import window from './store/window'
 
 import ElementUI from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/ja'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/display.css'
 
+// ===== model =====
+// import './model/model'
+
+// ===== Vue =====
 Vue.config.productionTip = false;
 
 Vue.component('icon', Icon);
@@ -23,5 +29,6 @@ new Vue({
   components: {
     App,
     Icon
-  }
+  },
+  store: window
 });

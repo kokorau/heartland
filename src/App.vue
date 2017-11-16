@@ -1,54 +1,52 @@
-<template>
-  <div id="app">
-    <div id="front">
-      <front></front>
-    </div>
+<template lang="pug">
 
-    <div id="object">
-      <model></model>
-    </div>
+  div#app
 
-    <div id="bg">
-      <img src="static/main.jpg">
-    </div>
-  </div>
+    div.front
+      front
+
+    el-row(hidden-sm-only)
+      div#object
+       //model
+
+    bg
+
 </template>
 
 <script>
-import Front from "./front/Index.vue";
-import Model from "./back/Index.vue";
+  import Front from "./front/Index.vue";
+  import Model from "./back/Index.vue";
+  import Bg from "./bg/Index.vue";
 
-export default {
-  name: 'app',
-  components: {
-    Model,
-    Front
+  export default {
+    name: 'app',
+    components: {
+      Bg,
+      Model,
+      Front
+    }
   }
 </script>
 
-<style>
-  #front {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  #object {
-    z-index: -1;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
-  #bg {
-    z-index: -10;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-  }
-  #bg img {
+<style lang="sass">
+  @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC')
+  @import "global"
+
+  .container
+    margin-right: 15px
+    margin-left: 15px
+
+  #app
+    font-family: 'Bowlby One SC', cursive
+    font-size: 20px
+
+  #object
+    z-index: -1
+    position: fixed
+    width: 100%
     height: 100%
-  }
-  body {
-    margin: 0;
-  }
+
+  body
+    margin: 0
+
 </style>

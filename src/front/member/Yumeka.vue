@@ -1,7 +1,7 @@
 <template>
   <member
     name="Yumeka"
-    twitterLink=""
+    twitterLink="https://twitter.com/ymk_ah"
     soundcloudLink="https://soundcloud.com/1-drink"
     imgSrc="static/yumeka.jpg"
   >

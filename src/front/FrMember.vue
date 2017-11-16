@@ -1,33 +1,15 @@
-<template>
-  <section id="member">
+<template lang="pug">
+  section#member.member
 
-    <h2 class="section-title">MEMBER</h2>
+    h2.section-title MEMBER
 
-    <el-row :gutter="10" class="member-row">
-      <el-col :span="8">
-        <kag></kag>
-      </el-col>
-      <el-col :span="8">
-        <kent></kent>
-      </el-col>
-      <el-col :span="8">
-       <mari-sakurai></mari-sakurai>
-      </el-col>
-    </el-row>
+    kag
+    kent
+    mari-sakurai
+    one-drink
+    tomad
+    yumeka
 
-    <el-row :gutter="10" class="member-row">
-      <el-col :span="8">
-        <one-drink></one-drink>
-      </el-col>
-      <el-col :span="8">
-        <tomad></tomad>
-      </el-col>
-      <el-col :span="8">
-        <yumeka></yumeka>
-      </el-col>
-    </el-row>
-
-  </section>
 </template>
 <script>
   import Kag from "./member/Kag.vue";
@@ -36,21 +18,23 @@
   import OneDrink from "./member/OneDrink.vue";
   import Tomad from "./member/Tomad.vue";
   import Yumeka from "./member/Yumeka.vue";
+  import ElCard from "../../node_modules/element-ui/packages/card/src/main.vue";
 
   export default {
+    name: 'fr-member',
     components: {
+      ElCard,
       Yumeka,
       Tomad,
       OneDrink,
       MariSakurai,
       Kent,
-      Kag },
-    name: 'fr-member'
+      Kag
+    }
   }
 </script>
-<style>
-  .member-row {
-    margin-bottom: 10px;
-    max-width: 1200px;
-  }
+<style lang="sass">
+  .section-title
+    font-size: 60px
+
 </style>

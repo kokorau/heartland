@@ -1,65 +1,54 @@
-<template>
-  <el-card :body-style="cardStyle">
-    <img :src="imgSrc" class="image"/>
-    <div style="padding:14px;">
-      <h3>
-        {{name}}
-        <span>
-          <twitter
-            v-if="twitterLink != ''"
-            :link="twitterLink"
-          ></twitter>
-          <soundcloud
-            v-if="soundcloudLink != ''"
-            :link="soundcloudLink"
-          ></soundcloud>
-        </span>
-      </h3>
-      <slot name="description">
-        description
-      </slot>
-    </div>
-  </el-card>
+<template lang="pug">
+  div.member
+    img(:src="imgSrc")
+
+    div
+      h3.m-name {{name}}
+        span
+          twitter(v-if="twitterLink != ''", :link="twitterLink")
+          soundcloud(v-if="soundcloudLink != ''", :link="soundcloudLink")
+
+      div.m-description
+        slot(name="description")
 </template>
 
 <script>
-  import ElCard from "../../../node_modules/element-ui/packages/card/src/main.vue";
   import Twitter from "../../assets/Twitter.vue";
   import Soundcloud from "../../assets/SoundCloud.vue";
 
   export default {
     components: {
       Soundcloud,
-      Twitter,
-      ElCard },
-    name: 'member',
-    data() {
-      return {
-        cardStyle: {
-          'padding': '0',
-          'border': '0px'
-        }
-      }
+      Twitter
     },
+    name: 'member',
     props: {
-      name: {type: String},
-      twitterLink: {type: String, default: ''},
-      soundcloudLink: {type: String, default: ''},
-      imgSrc: {type:String}
+      name: { type: String },
+      twitterLink: { type: String, default: '' },
+      soundcloudLink: { type: String, default: '' },
+      imgSrc: { type: String }
     }
   }
 </script>
 
-<style>
-  .el-card {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-  }
-  .image {
-    width: 100%;
-    height: 254px;
-    object-fit: cover;
-  }
+<style lang="sass">
+  .m-description
+    color: #fff
+
+  .card
+    background-color: rgba(0, 0, 0, 0.3)
+    border: none
+    border-radius: 2px
+    color: #ff3030
+    max-width: 800px
+    margin-right: 0
+    margin-left: auto
+    img
+      width: 100%
+      height: 254px
+      object-fit: cover
+
+  .m-name
+     margin: 0
+
 </style>
