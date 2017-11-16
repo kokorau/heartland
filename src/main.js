@@ -13,7 +13,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 
 // ===== model =====
-import './model/model'
+// import './model/model'
 
 // ===== Vue =====
 Vue.config.productionTip = false;

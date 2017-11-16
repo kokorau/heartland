@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {EffectComposer, ShockwavePass, GlitchPass, RenderPass} from 'postprocessing';
+// import {EffectComposer, ShockwavePass, GlitchPass, RenderPass} from 'postprocessing';
 import './model.css';
 import camera from './camera';
 import scene from './light';

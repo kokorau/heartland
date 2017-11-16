@@ -1,6 +1,7 @@
 <template lang="pug">
   div.bg(ref="bg")
     img(src="static/main.jpg")
+    p {{perY}}
 </template>
 
 <script>
@@ -9,28 +10,33 @@
     name: 'bg',
     data () {
       return {
+        scrollY: 0,
+        windowHeight: document.documentElement.clientHeight,
       }
     },
 
     mounted () {
       window.addEventListener ('resize', this.onWindowResize);
+      window.addEventListener('scroll', this.onScroll)
     },
 
     methods: {
 
       onWindowResize () {
-        const $bg = this.$refs.bg;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+      },
 
-        this.$store.commit('setBgSize',
-          $bg.clientWidth,
-          $bg.clientHeight
-        );
-
+      onScroll () {
+        this.scrollY = window.pageYOffset;
       }
-
     },
 
-
+    computed: {
+      perY() {
+        return this.scrollY / this.windowHeight
+      }
+    }
 
   }
 
@@ -45,6 +51,7 @@
 
     img
       height: 100%
+      object-fit: cover
 
   .bg-xs
     position: fixed
