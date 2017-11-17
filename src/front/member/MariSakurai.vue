@@ -3,7 +3,10 @@
     name="Mari Sakurai"
     twitterLink=""
     soundcloudLink="https://soundcloud.com/marisakurai"
-    imgSrc="static/mari-sakurai.jpg")
+   imgSrc="static/mari-sakurai.jpg")
+
+    div(slot="name")
+      p Mari Sakurai
 
     div(slot="description")
       p エレクトロニックミュージック・コレクティヴ 〈IN HA〉のメンバーとして、不定期にイベントを開催。過去にはロシアのファッションデザイナー Gosha Rubchinskiの盟友として知られるプロデューサー、buttechnoや

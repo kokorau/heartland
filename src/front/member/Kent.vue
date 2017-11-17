@@ -1,9 +1,12 @@
 <template lang="pug">
   member(
-    name="KENT"
-    description="description"
-    twitterLink="https://twitter.com/IXVIIVIIIIV"
-    imgSrc="static/kent.jpg")
+    twitterLink="https://twitter.com/IXVIIVIIIIV",
+    imgSrc="static/kent.jpg",
+    :objY="0"
+    )
+
+    div(slot="name")
+      p KENT
 
     div(slot="description")
       p 1997年神奈川県生まれ出身の20歳。

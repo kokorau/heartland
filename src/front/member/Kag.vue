@@ -1,7 +1,9 @@
 <template lang="pug">
   member(
     twitterLink="https://twitter.com/shi10hiwa3"
-    imgSrc="static/kag.jpg")
+    imgSrc="static/kag.jpg",
+    :objY="50"
+    )
 
     div(slot="name")
       h3 kag

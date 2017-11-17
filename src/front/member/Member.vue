@@ -1,7 +1,7 @@
 <template lang="pug">
   el-card.m-card(:body-style="bodyStyle")
 
-    img.img(:src="imgSrc")
+    img.img(:src="imgSrc", ref="img")
 
     div.content(style="contentStyle")
 
@@ -24,7 +24,9 @@
       Soundcloud,
       Twitter
     },
+
     name: 'member',
+
     data () {
       const bodyStyle = {
         'padding': '0',
@@ -38,11 +40,17 @@
         contentStyle: contentStyle
       }
     },
+
+    mounted () {
+      this.$refs.img.style.objectPosition = `0 ${this.objY}%`;
+    },
+
     props: {
       name: { type: String },
       twitterLink: { type: String, default: '' },
       soundcloudLink: { type: String, default: '' },
-      imgSrc: { type: String }
+      imgSrc: { type: String },
+      objY: {type: Number, default: 50}
     }
   }
 </script>
@@ -57,4 +65,7 @@
     background-color: rgba(0, 0, 0, 0.5)
     color: #fff
     font-size: 1.3vh
+    border: none
+    border-radius: 3px
+    margin-bottom: 1.5px
 </style>
