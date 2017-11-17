@@ -2,7 +2,7 @@
 
 <template lang="pug">
 
-  div.title
+  div.title.font-bowlby
 
     div.title-content(ref="text")
 

@@ -11,36 +11,17 @@
     data () {
       return {
         scrollY: 0,
-        windowHeight: document.documentElement.clientHeight,
+        windowHeight: 0,
       }
-    },
-
-    mounted () {
-
-      window.addEventListener ('resize', this.onWindowResize);
-      window.addEventListener('scroll', this.onScroll);
-
-    },
-
-    methods: {
-
-      onWindowResize () {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-      },
-
-      onScroll () {
-        this.scrollY = window.pageYOffset;
-      }
-
     },
 
     computed: {
       perY() {
         return this.scrollY / this.windowHeight
       }
-    }
+    },
 
+    props: {}
   }
 
 </script>

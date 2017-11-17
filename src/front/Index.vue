@@ -22,7 +22,8 @@
 
     data () {
       return {
-        width: 0
+        width: 0,
+        scrollHeight: 0,
       }
     },
 
@@ -33,25 +34,25 @@
     methods: {
       onResize() {
         this.width = window.innerWidth
-      }
+      },
     },
 
     computed: {
+
+      scrollY () {
+        return window.pageYOffset
+      },
+
       span () {
         if (this.width < 768) { // xs
-          console.log('xs');
           return 24
         } else if (768 <= this.width && this.width < 992) { // sm
-          console.log('sm');
           return 24
         } else if (992 <= this.width && this.width < 1200) { // md
-          console.log('md');
           return 24
         } else if (1200 <= this.width && this.width < 1920) { // lg
-          console.log('lg');
           return 24
         } else if (1920 <= this.width) { // xl
-          console.log('xl');
           return 24
         }
       }
@@ -79,5 +80,9 @@
     img
       height: 100%
       object-fit: cover
+
+  .section-title
+    font-size: 400%
+    margin: 0
 
 </style>

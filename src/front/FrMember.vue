@@ -1,7 +1,8 @@
 <template lang="pug">
   section#member.member
 
-    h2.section-title MEMBER
+    h2.section-title.font-bowlby
+      |MEMBER
 
     kag
     kent
@@ -34,7 +35,5 @@
   }
 </script>
 <style lang="sass">
-  .section-title
-    font-size: 60px
 
 </style>
