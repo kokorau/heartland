@@ -6,8 +6,7 @@
     :objY="10"
   )
 
-    div(slot="name")
-      p yumeka
+    h3.name(slot="name") yumeka
 
     div(slot="description")
       p ハウス・ミュージックを基盤としながらBass Music等をジャンル、新旧問わず大胆に織り交ぜるスタイルで都内を中心に活動中。Vogue Musicに造詣が深く、新しいものを常に追うスタイルで書く音楽ブログ記事は少なからず評価を得ている。
@@ -27,6 +26,7 @@
   }
 </script>
 
-<style>
-
+<style lang="sass">
+  .name
+    margin: 0
 </style>

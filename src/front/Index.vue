@@ -1,12 +1,20 @@
 <template lang="pug">
   div
 
-    div.fr
+    div.fr#fr(ref="fr")
+      el-row
+        el-col(:span="24")
+          fr-title
+
       el-row
         el-col(:span="span", :offset="24-span")
-          fr
+          fr-member
 
-    div.bg
+      el-row
+        el-col(:span="span", :offset="24-span")
+          fr-description
+
+    div.bg(ref="bg")
       el-row
         el-col(:span="span")
           bg
@@ -16,48 +24,63 @@
 <script>
   import Fr from "./Fr.vue";
   import Bg from "./Bg.vue";
+  import FrTitle from "./FrTitle.vue";
+  import FrMember from "./FrMember.vue";
+  import FrDescription from "./FrDescription.vue";
 
   export default {
     name: 'main-content',
 
     data () {
       return {
-        width: 0,
+        isMounted: false,
         scrollHeight: 0,
       }
     },
 
-    created () {
-      window.addEventListener('resize', this.onResize)
-    },
-
-    methods: {
-      onResize() {
-        this.width = window.innerWidth
-      },
+    mounted () {
+      this.isMounted = true
     },
 
     computed: {
 
-      scrollY () {
-        return window.pageYOffset
+      scrollY: () => window.pageYOffset,
+
+      frWidth () {
+        if (this.isMounted) {
+          console.log('checked');
+          return this.$refs.fr.clientWidth
+        }
       },
 
+      bgWidth: () => window.innerWidth,
+
       span () {
-        if (this.width < 768) { // xs
+        if (this.frWidth < 768) { // xs
+          console.log('xs');
           return 24
-        } else if (768 <= this.width && this.width < 992) { // sm
-          return 24
-        } else if (992 <= this.width && this.width < 1200) { // md
-          return 24
-        } else if (1200 <= this.width && this.width < 1920) { // lg
-          return 24
-        } else if (1920 <= this.width) { // xl
-          return 24
+        } else if (768 <= this.frWidth && this.frWidth < 992) { // sm
+          console.log('sm');
+          return 20
+        } else if (992 <= this.frWidth && this.frWidth < 1200) { // md
+          console.log('md');
+          return 14
+        } else if (1200 <= this.frWidth && this.frWidth < 1920) { // lg
+          console.log('lg');
+          return 12
+        } else if (1920 <= this.frWidth) { // xl
+          console.log('xl');
+          return 12
         }
       }
+
     },
-    components: { Fr, Bg }
+    components: {
+      FrDescription,
+      FrMember,
+      FrTitle,
+      Fr,
+      Bg }
   }
 </script>
 

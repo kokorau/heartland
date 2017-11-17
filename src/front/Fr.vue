@@ -1,12 +1,8 @@
 <template lang="pug">
   div(ref="fr")
     el-row
-      el-col(:span="span", :offset="24-span")
+      el-col(:span="24", :offset="24-span")
         div.front(ref="fr")
-
-    el-row
-      el-col(:span="span", :offset="24-span")
-        //fr-title
 
     el-row
       el-col(:span="span", :offset="24-span")
@@ -54,19 +50,6 @@
     },
 
     computed: {
-      span () {
-        if (this.width < 768) { // xs
-          return 24
-        } else if (768 <= this.width && this.width < 992) { // sm
-          return 20
-        } else if (992 <= this.width && this.width < 1200) { // md
-          return 14
-        } else if (1200 <= this.width && this.width < 1920) { // lg
-          return 12
-        } else if (1920 <= this.width) { // xl
-          return 12
-        }
-      }
     },
 
     components: {

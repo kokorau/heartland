@@ -3,11 +3,13 @@
 
     img.img(:src="imgSrc", ref="img")
 
-    div.content(style="contentStyle")
+    div.content
 
-      slot(name="name")
+      div.name
+        slot(name="name")
 
-      slot(name="description")
+      div.description
+        slot(name="description")
 
       div.links
         twitter(v-if="twitterLink", :link="twitterLink")
@@ -31,13 +33,9 @@
       const bodyStyle = {
         'padding': '0',
       };
-      const contentStyle = {
-        padding: '14px'
-      };
 
       return {
         bodyStyle: bodyStyle,
-        contentStyle: contentStyle
       }
     },
 
@@ -56,6 +54,8 @@
 </script>
 
 <style lang="sass" scoped>
+  $content-padding: 3px
+
   .img
     width: 100%
     max-height: 25vh
@@ -68,4 +68,20 @@
     border: none
     border-radius: 3px
     margin-bottom: 1.5px
+
+  .links
+    padding-right: 10px
+
+  .description
+    text-align: left
+    padding-left: $content-padding
+    padding-right: $content-padding
+
+  .name
+    font-size: 180%
+    margin: -10px
+    padding-right: $content-padding
+
+  .name > h3
+    margin: 0
 </style>
