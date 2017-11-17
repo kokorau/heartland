@@ -28,12 +28,17 @@
     &:hover
       opacity: 0.7
 
-  .description
-    background-color: rgba(0, 0, 0, 0.5)
+  .el-card
+    background-color: rgba(0, 0, 0, 0.4)
     color: #fff
     font-size: 1.3vh
     border: none
     border-radius: 3px
     margin-bottom: 1.5px
 
+    p
+      font-size: 200%
+
+  .el-card__body
+    background-color: red
 </style>

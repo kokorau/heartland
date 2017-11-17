@@ -26,6 +26,8 @@
 
 <style lang="sass">
   @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC')
+  @import url('https://fonts.googleapis.com/css?family=Fjalla+One')
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans')
   @import "global"
 
   .font-bowlby
@@ -40,4 +42,5 @@
   body
     margin: 0
     font-size: 62.5%
+    font-family: 'Fjalla One', 'Noto Sans', sans-serif
 </style>
