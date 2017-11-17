@@ -5,7 +5,7 @@
 
     div.content
 
-      div.name
+      div.name.font-bowlby
         slot(name="name")
 
       div.description
@@ -54,6 +54,7 @@
 </script>
 
 <style lang="sass" scoped>
+  @import "../../global"
   $content-padding: 3px
 
   .img
@@ -78,9 +79,9 @@
     padding-right: $content-padding
 
   .name
-    font-size: 180%
-    margin: -10px
-    padding-right: $content-padding
+    color: $main-color
+    font-size: 400%
+    margin-top: -50px
 
   .name > h3
     margin: 0

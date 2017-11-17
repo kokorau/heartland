@@ -85,12 +85,14 @@
 </script>
 
 <style lang="sass">
+  @import "../global"
+
   .fr
     z-index: 2
     position: absolute
     width: 100%
     height: 100%
-    color: rgb(255, 0, 0)
+    color: $main-color
     text-align: right
     margin-left: 15px
     margin-right: 20px
@@ -105,7 +107,7 @@
       object-fit: cover
 
   .section-title
-    font-size: 400%
+    font-size: 500%
     margin: 0
 
 </style>

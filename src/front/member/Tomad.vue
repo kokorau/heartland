@@ -2,7 +2,6 @@
   member(
     twitterLink="https://twitter.com/tomad"
     imgSrc="static/tomad.jpg"
-
     )
 
     h3.name(slot="name") tomad
