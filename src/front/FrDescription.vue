@@ -1,17 +1,17 @@
-<template>
-  <div>
+<template lang="pug">
+  div.font-bowlby
+    h3.section-title INFOMATION
 
-    <p>
-      <label>LOCATION: </label>
-      AOYAMA OATH
-      <i class="fa fa-location"></i>
-    </p>
-    <p>
-      <label>DATE: </label>
-      2017/12/17 18:00-23:00
-    </p>
+    el-card
+      p
+        label LOCATION:
+        a(target="_blank",
+          href="https://www.google.co.jp/maps/place/OATH/@35.6582777,139.7092371,19z/data=!4m5!3m4!1s0x60188b5e7f0c8ba1:0xc268e385918a1532!8m2!3d35.6586473!4d139.7091919")
+          |AOYAMA OATH
+      p
+        label DATE:
+        |2017/12/17 18:00-24:00
 
-  </div>
 </template>
 
 <script>
@@ -20,5 +20,20 @@
   }
 </script>
 
-<style>
+<style lang="sass">
+  a
+    text-decoration: none
+    color: darksalmon
+
+    &:hover
+      opacity: 0.7
+
+  .el-card
+    background-color: rgba(0, 0, 0, 0.5)
+    color: #fff
+    font-size: 1.3vh
+    border: none
+    border-radius: 3px
+    margin-bottom: 1.5px
+
 </style>

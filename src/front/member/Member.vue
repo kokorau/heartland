@@ -1,15 +1,20 @@
 <template lang="pug">
-  div.member
-    img(:src="imgSrc")
+  el-card.m-card(:body-style="bodyStyle")
 
-    div
-      h3.m-name {{name}}
-        span
-          twitter(v-if="twitterLink != ''", :link="twitterLink")
-          soundcloud(v-if="soundcloudLink != ''", :link="soundcloudLink")
+    img.img(:src="imgSrc", ref="img")
 
-      div.m-description
+    div.content
+
+      div.name
+        slot(name="name")
+
+      div.description
         slot(name="description")
+
+      div.links
+        twitter(v-if="twitterLink", :link="twitterLink")
+        soundcloud(v-if="soundcloudLink", :link="soundcloudLink")
+
 </template>
 
 <script>
@@ -21,34 +26,62 @@
       Soundcloud,
       Twitter
     },
+
     name: 'member',
+
+    data () {
+      const bodyStyle = {
+        'padding': '0',
+      };
+
+      return {
+        bodyStyle: bodyStyle,
+      }
+    },
+
+    mounted () {
+      this.$refs.img.style.objectPosition = `0 ${this.objY}%`;
+    },
+
     props: {
       name: { type: String },
       twitterLink: { type: String, default: '' },
       soundcloudLink: { type: String, default: '' },
-      imgSrc: { type: String }
+      imgSrc: { type: String },
+      objY: {type: Number, default: 50}
     }
   }
 </script>
 
-<style lang="sass">
-  .m-description
+<style lang="sass" scoped>
+  $content-padding: 3px
+
+  .img
+    width: 100%
+    max-height: 25vh
+    object-fit: cover
+
+  .el-card
+    background-color: rgba(0, 0, 0, 0.5)
     color: #fff
-
-  .card
-    background-color: rgba(0, 0, 0, 0.3)
+    font-size: 1.3vh
     border: none
-    border-radius: 2px
-    color: #ff3030
-    max-width: 800px
-    margin-right: 0
-    margin-left: auto
-    img
-      width: 100%
-      height: 254px
-      object-fit: cover
+    border-radius: 3px
+    margin-bottom: 1.5px
 
-  .m-name
-     margin: 0
+  .links
+    padding-right: 10px
 
+  .description
+    text-align: left
+    padding-left: $content-padding
+    padding-right: $content-padding
+
+  .name
+    font-size: 180%
+    margin: -10px
+    padding-right: $content-padding
+
+  .name > h3
+    margin: 0
 </style>

@@ -14,7 +14,7 @@
 
 <style lang="sass">
   .twitter-icon
-    color: gray
+    color: #c5c5c5
 
   .twitter
     &:hover

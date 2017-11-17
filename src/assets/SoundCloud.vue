@@ -12,7 +12,7 @@
 
 <style lang="sass">
   .soundcloud-icon
-    color: gray
+    color: #c0c0c0
 
   .soundcloud
     &:hover

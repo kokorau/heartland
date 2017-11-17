@@ -1,9 +1,12 @@
 <template lang="pug">
   member(
-    name="Tomad"
-    description="description"
     twitterLink="https://twitter.com/tomad"
-    imgSrc="static/tomad.jpg")
+    imgSrc="static/tomad.jpg"
+
+    )
+
+    h3.name(slot="name") tomad
+
     div(slot="description")
       p インターネットレーベル「Maltine Records」主宰。2006年頃からラップトップを使ったDJ活動開始。都内を中心にLIQUIDROOMやUNIT、AIR、MOGRAなど様々なクラブでプレイ。2009年から都内のクラブにて年数回のペースで自身レーベルのイベントオーガナイズもしている。
 </template>
@@ -20,6 +23,7 @@
   }
 </script>
 
-<style>
-
+<style lang="sass">
+  .name
+    margin: 0
 </style>

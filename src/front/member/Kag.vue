@@ -1,10 +1,15 @@
 <template lang="pug">
   member(
-    name="KAG"
     twitterLink="https://twitter.com/shi10hiwa3"
-    imgSrc="static/kag.jpg")
+    imgSrc="static/kag.jpg",
+    :objY="50"
+    )
+
+    h3.name(slot="name") kag
+
     div(slot="description")
-      p おっぱい大好き
+      p 山形県天童市出身。インターネットミュージックに影響を受け上京。渋家で開催されたパーティ「ZOO」を主催し、tomad、食品まつり a.k.a foodman、Kane Westらとパーティを行う。
+      p 代官山WEEKEND GARAGE TOKYOでのDJラウンジオーガナイズや、渋谷のコミュニティーラジオ「渋谷のラジオ」でディレクターを務めるなど活動は多岐にわたる。
 </template>
 
 <script>
@@ -21,5 +26,7 @@
 </script>
 
 <style>
-
+  .name {
+    margin: 0
+  }
 </style>
