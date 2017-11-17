@@ -1,5 +1,6 @@
 <template lang="pug">
   div.font-bowlby
+
     h3.section-title INFOMATION
 
     el-card.description

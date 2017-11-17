@@ -8,12 +8,13 @@
       div.name.font-bowlby
         slot(name="name")
 
-      div.description
-        slot(name="description")
-
       div.links
         twitter(v-if="twitterLink", :link="twitterLink")
         soundcloud(v-if="soundcloudLink", :link="soundcloudLink")
+
+      div.description
+        slot(name="description")
+
 
 </template>
 
@@ -71,6 +72,7 @@
     margin-bottom: 1.5px
 
   .links
+    margin-top: -20px
     padding-right: 10px
 
   .description
