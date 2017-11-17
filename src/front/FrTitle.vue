@@ -1,5 +1,3 @@
-<!-- 遊びでpugとsass使ってみた。 -->
-
 <template lang="pug">
 
   div.title.font-bowlby

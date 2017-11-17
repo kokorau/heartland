@@ -22,7 +22,6 @@
 </template>
 
 <script>
-  import Fr from "./Fr.vue";
   import Bg from "./Bg.vue";
   import FrTitle from "./FrTitle.vue";
   import FrMember from "./FrMember.vue";
@@ -33,25 +32,27 @@
 
     data () {
       return {
-        isMounted: false,
         scrollHeight: 0,
+        frWidth: 0
       }
     },
 
     mounted () {
-      this.isMounted = true
+      window.addEventListener ('resize', this.onWindowResize);
+      this.onWindowResize()
+    },
+
+    methods: {
+
+      onWindowResize () {
+        this.frWidth = this.$refs.fr.offsetWidth;
+      },
+
     },
 
     computed: {
 
       scrollY: () => window.pageYOffset,
-
-      frWidth () {
-        if (this.isMounted) {
-          console.log('checked');
-          return this.$refs.fr.clientWidth
-        }
-      },
 
       bgWidth: () => window.innerWidth,
 
@@ -79,7 +80,6 @@
       FrDescription,
       FrMember,
       FrTitle,
-      Fr,
       Bg }
   }
 </script>
