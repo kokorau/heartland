@@ -2,7 +2,7 @@
   div.font-bowlby
     h3.section-title INFOMATION
 
-    el-card
+    el-card.description
       p
         label LOCATION:
         a(target="_blank",
@@ -20,15 +20,15 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   a
     text-decoration: none
-    color: darksalmon
+    color: #fff
 
     &:hover
       opacity: 0.7
 
-  .el-card
+  .description
     background-color: rgba(0, 0, 0, 0.5)
     color: #fff
     font-size: 1.3vh
